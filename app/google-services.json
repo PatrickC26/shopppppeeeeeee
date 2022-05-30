@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "154524199441",
+    "firebase_url": "https://app-design-1a03e-default-rtdb.firebaseio.com",
+    "project_id": "app-design-1a03e",
+    "storage_bucket": "app-design-1a03e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:154524199441:android:17f11c5c48499308e8dfb0",
+        "android_client_info": {
+          "package_name": "tw.cgu.b0921251.finalexam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "154524199441-ou5rhsah3ca9ebqa3ohvqf43vcbnpfaf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSXj0GVATaxXtByb_kAEKXuftZnL1tM-A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "154524199441-ou5rhsah3ca9ebqa3ohvqf43vcbnpfaf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

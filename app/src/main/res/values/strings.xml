@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">網路購物</string>
+    <string-array name="Filter">
+        <item>顯示全部</item>
+        <item>手機</item>
+        <item>衣服</item>
+        <item>鞋子</item>
+        <item>穿戴配件</item>
+        <item>食物</item>
+    </string-array>
+
+    <string name="手機1">iPhone 13</string>
+    <string name="手機1詳細">◎ 型號 : iPhone 13\n
+◎ 保固 : 1年\n
+◎ 配件 : 搭載 iOS 15 的 iPhone、USB-C 對 Lightning 連接線、說明文件\n
+◎ 貨源 : 公司貨\n
+◎ NCC證號 : CCAI215G0090T1\n
+◎ 超瓷晶盾面板\n
+◎ 玻璃機背與鋁金屬設計\n
+◎ 超 Retina XDR 顯示器\n
+◎ 6.1 吋 (對角線) 全螢幕 OLED 顯示器\n
+◎ 2532 x 1170 像素，460 ppi 解析度\n
+◎ HDR 顯示\n
+◎ 原彩顯示\n
+◎ 廣色域 (P3)\n
+◎ 觸覺回饋觸控\n
+◎ 2,000,000:1 對比度 (標準)\n
+◎ 800 尼特最大亮度 (標準)；1200 尼特最大亮度 (HDR)\n
+◎ 防指印疏油外膜\n
+◎ 支援同時顯示多種語言文字\n
+◎ 防潑、抗水與防塵 : 達到 IEC 60529 標準的 IP68 等級 (在最深達 6 公尺水中最長可達 30 分鐘)\n
+◎ 晶片 :\n
+A15 仿生晶片\n
+全新 6 核心 CPU 配備 2 個效能核心與 4 個節能核心\n
+全新 4 核心 GPU\n
+全新 16 核心神經網路引擎\n
+◎ 相機 : 1200 萬像素雙相機系統：廣角與超廣角相機\n
+◎ 電源與電池 :\n
+影片播放時間：最長可達 19 小時\n
+影片串流播放時間：最長可達 15 小時\n
+音訊播放時間：最長可達 75 小時\n
+◎ 作業系統 : iOS 15\n
+◎ 環境需求 :\n
+作業環境溫度： 0° 至 35° C (32° 至 95° F)\n
+非作業溫度： −20° 至 45° C (−4° 至 113° F)\n
+相對濕度： 5% 至 95% 非冷凝狀態\n
+作業高度： 目前測試最高可達 3,000 公尺 (10,000 呎)\n
+◎ 商品網頁說明僅供參考，實際商品規格以原廠出貨為準\n
+◎ 經消費者拆封之3C商品，不適用7天鑑賞期 </string>
+    <string name="手機1金額">25900</string>
+
+    <string name="鞋子1">DUNK LOW GREY</string>
+    <string name="鞋子1詳細">DUNK由Peter Moore於1980年設計推出，並在1985年成為籃球鞋中的首選鞋款，1985年夏季NIKE開啟了大學配色計畫「Be True To Your School」，選用DUNK打造該系列，同時成為籃球鞋史上第一組鮮豔配色的系列。此款採用全皮革材質，莫蘭迪灰拼接淺灰的層次感搭上全白Swoosh Logo，簡潔低調的配色富有復古氣息。</string>
+    <string name="鞋子1金額">5800</string>
+
+    <string name="衣服1">ORIGINAL 寬版短T</string>
+    <string name="衣服1詳細">【尺寸】ONE SIZE\n落肩寬60/胸寬58/衣長73/袖長23CM\n【產地】韓國製\n 153/48 寬鬆長板 \n 170/68 舒適小寬鬆</string>
+    <string name="衣服1金額">700</string>
+
+    <string name="穿戴1">PETITE Set</string>
+    <string name="穿戴1詳細">\t~~PETITE MELROSE~~\n
+貨號\tDW00100219\n
+手錶厚度\t6mm\n
+錶盤顏色\t蛋殼白\n
+機芯\t日本石英機芯\n
+錶帶寬度\t12毫米\n
+錶帶\t網眼編織錶帶\n
+錶帶顏色\t玫瑰金色\n
+可換錶帶\t是\n
+防水性\t最大 3ATM (抗雨)\n\n
+\t~~PETITE ASHFIELD~~\n
+貨號\tDW00100307\n
+手錶厚度\t6mm\n
+錶盤顏色\t黑色\n
+機芯\t日本石英機芯\n
+材質\t電鍍不鏽鋼 (316L)\n
+錶帶寬度\t16毫米\n
+錶帶\t網眼編織錶帶\n
+錶帶顏色\t黑色\n
+可換錶帶\t是\n
+防水性\t最大 3ATM (抗雨)</string>
+    <string name="穿戴1金額">11502</string>
+
+    <string name="食物1">小惡魔奶油雞肉義大利麵</string>
+    <string name="食物1詳細">火辣辣的小惡魔，遇上香濃可口的奶油醬，要讓你邊吃邊噴火，卻又捨不得停口。</string>
+    <string name="食物1金額">270</string>
+</resources>
