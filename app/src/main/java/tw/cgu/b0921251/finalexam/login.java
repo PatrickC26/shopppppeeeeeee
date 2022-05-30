@@ -49,7 +49,6 @@ public class login extends AppCompatActivity {
     int themeColor = 0; // 0 -> purple  1 -> black   2 -> green   3 -> red
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,8 +78,7 @@ public class login extends AppCompatActivity {
     // login page
     public void loginButton(View v){
         if (PSWD.equals(T_password.getText().toString())) {
-            Intent a = new Intent(this, shopping.class);
-            startActivity(a);
+            startActivity(new Intent(this, shopping.class));
         }
         else {
             AlertDialog.Builder loginUnsuccessfull = new AlertDialog.Builder(this);
@@ -92,9 +90,9 @@ public class login extends AppCompatActivity {
 
 
     // ALL
-    public void MainOnClick(View v){ setContentView(R.layout.activity_shopping);}
-    public void CartOnClick(View v){ setContentView(R.layout.activity_cart);}
-    public void SettingOnClick(View v){ setContentView(R.layout.activity_setting);}
+    public void MainOnClick(View v){ startActivity(new Intent(this, shopping.class));}
+    public void CartOnClick(View v){ startActivity(new Intent(this, Cart.class));}
+    public void SettingOnClick(View v){ startActivity(new Intent(this, setting.class));}
 
 
     // setting page
