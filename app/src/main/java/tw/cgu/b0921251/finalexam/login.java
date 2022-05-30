@@ -96,7 +96,7 @@ public class login extends AppCompatActivity {
 
 
     // setting page
-    public void logout (View v){ setContentView(R.layout.activity_login);  }
+
 
 
 }

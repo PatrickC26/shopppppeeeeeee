@@ -21,9 +21,21 @@ public class setting extends AppCompatActivity {
     public void SettingOnClick(View v){ startActivity(new Intent(this, setting.class));}
 
     public void logout (View v){
-        setContentView(R.layout.activity_login);
+        Intent it = new Intent(this,login.class);
+        startActivity(it);
     }
 
-
-
+    public void MainOnClick(View v){
+        System.out.println("Log in success");
+        Intent it = new Intent(this,shopping.class);
+        startActivity(it);
+    }
+    public void CartOnClick(View v){
+        Intent it = new Intent(this,Cart.class);
+        startActivity(it);
+    }
+    public void SettingOnClick(View v){
+        Intent it = new Intent(this,setting.class);
+        startActivity(it);
+    }
 }
