@@ -95,8 +95,4 @@ public class login extends AppCompatActivity {
     public void SettingOnClick(View v){ startActivity(new Intent(this, setting.class));}
 
 
-    // setting page
-
-
-
 }
