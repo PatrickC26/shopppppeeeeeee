@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
@@ -24,12 +25,13 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
     Toast tos;
     TextView tp1,tp2,tp3,tp4,ts1,ts2,tsh1,tsh2,tsh3,tsh4,tw1,tw2,tf1,tf2;
     TextView tppr,tspr,tshpr,twpr,tfpr;
+    Button bp1,bs1,bsh1,bw1,bf1,bmain,bcart,bsetting;
     Boolean p[] = {false,false,false,false};//phone
     Boolean s[] = {false,false};//shoe
     Boolean sh[] = {false,false,false,false};//shirt
     Boolean w[] = {false,false};//wear
     Boolean f[] = {false,false};//food
-
+    int nowcolor=0;
     int producttotal[] ={0,0,0,0};//auto find how much mun of each kind product????
     int filternum=0;
     @Override
@@ -37,11 +39,13 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping);
         filter = (Spinner) findViewById(R.id.SP_filter);
+
         phone = findViewById(R.id.PhoneView);
         shirt = findViewById(R.id.ShirtView);
         shoe = findViewById(R.id.ShoeView);
         wear = findViewById(R.id.WearView);
         food = findViewById(R.id.FoodView);
+
         tp1 = findViewById(R.id.L_amountP1);
         tp2 = findViewById(R.id.L_amountP2);
         tp3 = findViewById(R.id.L_amountP3);
@@ -63,8 +67,22 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
         twpr = findViewById(R.id.L_pricew1);
         tfpr = findViewById(R.id.L_pricef1);
 
-
         tos = Toast.makeText(this,"",Toast.LENGTH_SHORT);
+//        nowcolor = 接收顏色
+//                nowcolor = 3;
+        bp1 = findViewById(R.id.B_addP1);
+        bs1 = findViewById(R.id.B_addS1);
+        bsh1 = findViewById(R.id.B_addSH1);
+        bw1 = findViewById(R.id.B_addW1);
+        bf1 = findViewById(R.id.B_addF1);
+        bmain = findViewById(R.id.B_main);
+        bcart = findViewById(R.id.B_cart1);
+        bsetting = findViewById(R.id.B_setting1);
+        Button b[] = {bp1,bs1,bsh1,bw1,bf1,bmain,bcart,bsetting};
+        for(int i=0;i<b.length;i++){
+            changebtncolor(b[i],nowcolor);
+        }
+
 
 
 
@@ -275,65 +293,53 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
     //phone
     public void AddOnClickp1(View v){
         getproductname(0,0);
-
     }
     public void AddOnClickp2(View v){
         getproductname(0,1);
     }
     public void AddOnClickp3(View v){
         getproductname(0,2);
-
     }
     public void AddOnClickp4(View v){
         getproductname(0,3);
-
     }
 
     //shirt
     public void AddOnClicksh1(View v){
         getproductname(1,0);
-
     }
     public void AddOnClicksh2(View v){
         getproductname(1,1);
-
     }
     public void AddOnClicksh3(View v){
         getproductname(1,2);
-
     }
     public void AddOnClicksh4(View v){
         getproductname(1,3);
-
     }
 
     //shoe
     public void AddOnClicks1(View v){
         getproductname(2,0);
-
     }
     public void AddOnClicks2(View v) {
         getproductname(2,1);
-
     }
+
     //wear
     public void AddOnClickw1(View v){
         getproductname(3,0);
-
     }
     public void AddOnClickw2(View v){
         getproductname(3,1);
-
     }
 
     //food
     public void AddOnClickf1(View v){
         getproductname(4,0);
-
     }
     public void AddOnClickf2(View v){
         getproductname(4,1);
-
     }
 
 
@@ -350,6 +356,30 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
     public void SettingOnClick(View v){
         Intent it = new Intent(this,setting.class);
         startActivity(it);
+    }
+
+
+    public void changebtncolor(Button b , int color){
+        switch (color){
+            case 0:
+                b.setBackgroundColor(Color.rgb(98,0,238));
+                b.setTextColor(Color.rgb(255,255,255));
+                break;
+            case 1:
+                b.setBackgroundColor(Color.rgb(0,0,0));
+                b.setTextColor(Color.rgb(255,255,255));
+                break;
+            case 2:
+                b.setBackgroundColor(Color.rgb(0,255,0));
+                b.setTextColor(Color.rgb(255,255,255));
+                break;
+            case 3:
+                b.setBackgroundColor(Color.rgb(255,0,0));
+                b.setTextColor(Color.rgb(255,255,255));
+                break;
+            default:
+                break;
+        }
     }
 
 
