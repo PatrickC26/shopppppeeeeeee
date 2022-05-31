@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/willy/Documents/AndroidStudioFile/HW/shopppppeeeeeee/app/src/main/res/layout/activity_cart.xml" value="0.23697916666666666" />
+        <entry key="..\:/willy/Documents/AndroidStudioFile/HW/shopppppeeeeeee/app/src/main/res/layout/activity_check_out.xml" value="0.23697916666666666" />
+        <entry key="..\:/willy/Documents/AndroidStudioFile/HW/shopppppeeeeeee/app/src/main/res/layout/activity_login.xml" value="0.14447463768115942" />
+        <entry key="..\:/willy/Documents/AndroidStudioFile/HW/shopppppeeeeeee/app/src/main/res/layout/activity_setting.xml" value="0.23697916666666666" />
+        <entry key="..\:/willy/Documents/AndroidStudioFile/HW/shopppppeeeeeee/app/src/main/res/layout/activity_shopping.xml" value="0.264" />
         <entry key="app/src/main/res/layout/activity_cart.xml" value="0.2663360595703125" />
         <entry key="app/src/main/res/layout/activity_check_out.xml" value="0.22452545166015625" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1203125" />
