@@ -351,6 +351,11 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
     }
     public void CartOnClick(View v){
         Intent it = new Intent(this,Cart.class);
+        it.putExtra("phone",p);
+        it.putExtra("shoe",s);
+        it.putExtra("shirt",sh);
+        it.putExtra("wear",w);
+        it.putExtra("food",f);
         startActivity(it);
     }
     public void SettingOnClick(View v){
