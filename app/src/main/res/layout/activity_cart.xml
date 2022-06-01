@@ -385,7 +385,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="MainOnClick"
+            android:onClick="gomain"
             android:text="商城"
             android:textSize="20sp" />
 
@@ -394,7 +394,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="CartOnClick"
+            android:onClick="gopay"
             android:text="購物車"
             android:textSize="20sp" />
 
@@ -403,7 +403,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="SettingOnClick"
+            android:onClick="gosetting"
             android:text="設定"
             android:textSize="20sp" />
     </LinearLayout>
