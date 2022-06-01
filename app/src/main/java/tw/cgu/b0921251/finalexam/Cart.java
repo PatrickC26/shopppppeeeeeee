@@ -199,7 +199,7 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
            T_cartQty1.setVisibility(isvisible);
            CB_cart1.setVisibility(isvisible);
        }
-       if (wear[0]) {
+       if (shoe[0]) {
            L_cartTitle2.setVisibility(isvisible);
            L_cartAmount2.setVisibility(isvisible);
            P_cartImg2.setVisibility(isvisible);
@@ -213,7 +213,7 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
            T_cartQty3.setVisibility(isvisible);
            CB_cart3.setVisibility(isvisible);
        }
-       if (shoe[0]) {
+       if (wear[0]) {
            L_cartTitle4.setVisibility(isvisible);
            L_cartAmount4.setVisibility(isvisible);
            P_cartImg4.setVisibility(isvisible);
