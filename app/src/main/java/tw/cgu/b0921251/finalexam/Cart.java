@@ -26,6 +26,7 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
     EditText T_cartQty1,T_cartQty2,T_cartQty3,T_cartQty4,T_cartQty5;
     ImageView P_cartImg1,P_cartImg2,P_cartImg3,P_cartImg4,P_cartImg5;
     boolean[] check={false,false,false,false,false};
+    boolean phone[], shoe[],shirt[],wear[],food[];
     int notvisible=View.GONE;
     int isvisible=View.VISIBLE;
 
@@ -184,11 +185,11 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
 
     Intent it=getIntent();
 
-    boolean phone[]=it.getBooleanArrayExtra("phone");
-    boolean shoe[]=it.getBooleanArrayExtra("shoe");
-    boolean shirt[]= it.getBooleanArrayExtra("shirt");
-    boolean wear[]= it.getBooleanArrayExtra("wear");
-    boolean food[]= it.getBooleanArrayExtra("food");
+    phone=it.getBooleanArrayExtra("phone");
+    shoe=it.getBooleanArrayExtra("shoe");
+    shirt= it.getBooleanArrayExtra("shirt");
+    wear= it.getBooleanArrayExtra("wear");
+    food= it.getBooleanArrayExtra("food");
 
 
        if (phone[0]) {
@@ -344,7 +345,14 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
 
     public void gomain(View v){
         Intent gom=new Intent();
+
         gom.setClass(this,shopping.class);
+
+        gom.putExtra("phone",phone);
+        gom.putExtra("shirt",shirt);
+        gom.putExtra("shoe",shoe);
+        gom.putExtra("wear",wear);
+        gom.putExtra("food",food);
         startActivity(gom);
 
     }
