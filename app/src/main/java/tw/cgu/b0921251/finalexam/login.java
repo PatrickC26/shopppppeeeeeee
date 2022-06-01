@@ -36,7 +36,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
-public class login extends AppCompatActivity {
+public class login extends AppCompatActivity
+implements TextWatcher{
 
 
     // login
@@ -59,27 +60,28 @@ public class login extends AppCompatActivity {
         T_username = findViewById(R.id.T_username);
         T_password = findViewById(R.id.T_password);
         B_login = findViewById(R.id.B_login);
+
+        T_username.addTextChangedListener(this);
     }
 
     // login page
     public void loginButton(View v) throws InterruptedException {
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference pswd = database.getReference("account/" + T_username.getText().toString() + "/pswd");
-        pswd.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                String value = dataSnapshot.getValue(String.class);
-                System.out.println(value);
-                PSWD = value.toString();
-            }
+//        FirebaseDatabase database = FirebaseDatabase.getInstance();
+//        DatabaseReference pswd = database.getReference("account/" + T_username.getText().toString() + "/pswd");
+//        pswd.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                String value = dataSnapshot.getValue(String.class);
+//                System.out.println(value);
+//                PSWD = value.toString();
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError error) {
+//                System.out.println("Failed to read value." + error.toException());
+//            }
+//        });
 
-            @Override
-            public void onCancelled(DatabaseError error) {
-                System.out.println("Failed to read value." + error.toException());
-            }
-        });
-
-        Thread.sleep(1000);
 
         if (PSWD.equals(T_password.getText().toString())) {
             userName = T_username.getText().toString();
@@ -101,4 +103,30 @@ public class login extends AppCompatActivity {
     public void SettingOnClick(View v){ startActivity(new Intent(this, setting.class));}
 
 
+    @Override
+    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+    @Override
+    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable editable) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference pswd = database.getReference("account/" + T_username.getText().toString() + "/pswd");
+        pswd.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String value = dataSnapshot.getValue(String.class);
+                System.out.println(value);
+                PSWD = value.toString();
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                System.out.println("Failed to read value." + error.toException());
+            }
+        });
+    }
 }

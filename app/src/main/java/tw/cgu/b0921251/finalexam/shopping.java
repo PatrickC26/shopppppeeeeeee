@@ -18,6 +18,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class shopping extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
     Spinner filter;
@@ -118,6 +124,71 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
 
 
 
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference colorFB = database.getReference("account/" + login.userName + "/color");
+        colorFB.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                try {
+                    String value = dataSnapshot.getValue(String.class);
+                    int themeColor = Integer.parseInt(value);
+
+                    System.out.println(themeColor);
+
+                    switch (themeColor){
+                        case 0:
+                            bp1.setBackgroundColor(Color.rgb(128,0,128));
+                            bs1.setBackgroundColor(Color.rgb(128,0,128));
+                            bsh1.setBackgroundColor(Color.rgb(128,0,128));
+                            bw1.setBackgroundColor(Color.rgb(128,0,128));
+                            bf1.setBackgroundColor(Color.rgb(128,0,128));
+                            bmain.setBackgroundColor(Color.rgb(128,0,128));
+                            bcart.setBackgroundColor(Color.rgb(128,0,128));
+                            bsetting.setBackgroundColor(Color.rgb(128,0,128));
+                            break;
+
+                        case 1:
+                            bp1.setBackgroundColor(Color.BLACK);
+                            bs1.setBackgroundColor(Color.BLACK);
+                            bsh1.setBackgroundColor(Color.BLACK);
+                            bw1.setBackgroundColor(Color.BLACK);
+                            bf1.setBackgroundColor(Color.BLACK);
+                            bmain.setBackgroundColor(Color.BLACK);
+                            bcart.setBackgroundColor(Color.BLACK);
+                            bsetting.setBackgroundColor(Color.BLACK);
+                            break;
+
+                        case 2:
+                            bp1.setBackgroundColor(Color.rgb(0,255,0));
+                            bs1.setBackgroundColor(Color.rgb(0,255,0));
+                            bsh1.setBackgroundColor(Color.rgb(0,255,0));
+                            bw1.setBackgroundColor(Color.rgb(0,255,0));
+                            bf1.setBackgroundColor(Color.rgb(0,255,0));
+                            bmain.setBackgroundColor(Color.rgb(0,255,0));
+                            bcart.setBackgroundColor(Color.rgb(0,255,0));
+                            bsetting.setBackgroundColor(Color.rgb(0,255,0));
+                            break;
+                        case 3:
+                            bp1.setBackgroundColor(Color.rgb(255,0,0));
+                            bs1.setBackgroundColor(Color.rgb(255,0,0));
+                            bsh1.setBackgroundColor(Color.rgb(255,0,0));
+                            bw1.setBackgroundColor(Color.rgb(255,0,0));
+                            bf1.setBackgroundColor(Color.rgb(255,0,0));
+                            bmain.setBackgroundColor(Color.rgb(255,0,0));
+                            bcart.setBackgroundColor(Color.rgb(255,0,0));
+                            bsetting.setBackgroundColor(Color.rgb(255,0,0));
+                            break;
+                    }
+                }
+                catch (Exception e){   }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                System.out.println("Failed to read value." + error.toException());
+            }
+        });
+
 
     }
 
@@ -168,9 +239,7 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
                 wear.setVisibility(View.GONE);
                 food.setVisibility(View.VISIBLE);
                 break;
-
         }
-
     }
 
     @Override
