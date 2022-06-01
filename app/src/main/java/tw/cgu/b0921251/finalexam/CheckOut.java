@@ -46,7 +46,38 @@ class CheckOut extends AppCompatActivity implements
         CB_paynotice.setOnCheckedChangeListener(this);
 
 
+/* Intent getcolor=getIntent();
 
+        int color=getcolor.getIntExtra()
+
+        switch (color){
+            case 0:
+            B_back.setBackgroundColor(Color.rgb(128,0,128));
+            B_send.setBackgroundColor(Color.rgb(128,0,128));
+
+            break;
+
+
+            case 1:
+            B_back.setBackgroundColor(Color.rgb(255,255,255));
+            B_send.setBackgroundColor(Color.rgb(255,255,255));
+
+            break;
+
+            case 2:
+            B_back.setBackgroundColor(Color.rgb(0,255,0));
+            B_send.setBackgroundColor(Color.rgb(0,255,0));
+
+            break;
+
+            case 3:
+
+            B_back.setBackgroundColor(Color.rgb(255,0,0));
+            B_send.setBackgroundColor(Color.rgb(255,0,0));
+
+            break;
+
+        }*/
 
 
         Intent infoofitem=getIntent();
