@@ -105,6 +105,20 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
             ar[i].setText(a);
         }
         filter.setOnItemSelectedListener(this);
+
+        Intent it = getIntent();
+        int flag = it.getIntExtra("flag",0);
+        if(flag==1){
+            p=it.getBooleanArrayExtra("phone");
+            s=it.getBooleanArrayExtra("shoe");
+            sh= it.getBooleanArrayExtra("shirt");
+            w= it.getBooleanArrayExtra("wear");
+            f= it.getBooleanArrayExtra("food");
+        }
+
+
+
+
     }
 
 
@@ -267,23 +281,23 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
         }
 
         //debug---------------------
-        for (int k=0;k<4;k++){
+        for (int k=0;k<p.length;k++){
             System.out.print(p[k]+" ");
         }
         System.out.println();
-        for (int k=0;k<2;k++){
+        for (int k=0;k<s.length;k++){
             System.out.print(s[k]+" ");
         }
         System.out.println();
-        for (int k=0;k<4;k++){
+        for (int k=0;k<sh.length;k++){
             System.out.print(sh[k]+" ");
         }
         System.out.println();
-        for (int k=0;k<2;k++){
+        for (int k=0;k<w.length;k++){
             System.out.print(w[k]+" ");
         }
         System.out.println();
-        for (int k=0;k<2;k++){
+        for (int k=0;k<f.length;k++){
             System.out.print(f[k]+" ");
         }
         System.out.println();
