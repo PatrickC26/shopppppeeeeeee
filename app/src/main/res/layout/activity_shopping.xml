@@ -19,7 +19,7 @@
     <ScrollView
         android:id="@+id/SV_item"
         android:layout_width="match_parent"
-        android:layout_height="550dp">
+        android:layout_height="400dp">
 
         <LinearLayout
             android:layout_width="match_parent"

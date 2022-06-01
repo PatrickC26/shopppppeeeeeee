@@ -26,11 +26,11 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
     TextView tp1,tp2,tp3,tp4,ts1,ts2,tsh1,tsh2,tsh3,tsh4,tw1,tw2,tf1,tf2;
     TextView tppr,tspr,tshpr,twpr,tfpr;
     Button bp1,bs1,bsh1,bw1,bf1,bmain,bcart,bsetting;
-    Boolean p[] = {false,false,false,false};//phone
-    Boolean s[] = {false,false};//shoe
-    Boolean sh[] = {false,false,false,false};//shirt
-    Boolean w[] = {false,false};//wear
-    Boolean f[] = {false,false};//food
+    boolean p[] = {false,false,false,false};//phone
+    boolean s[] = {false,false};//shoe
+    boolean sh[] = {false,false,false,false};//shirt
+    boolean w[] = {false,false};//wear
+    boolean f[] = {false,false};//food
     int nowcolor=0;
     int producttotal[] ={0,0,0,0};//auto find how much mun of each kind product????
     int filternum=0;

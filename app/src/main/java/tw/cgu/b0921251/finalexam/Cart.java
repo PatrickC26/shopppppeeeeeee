@@ -190,41 +190,42 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
     boolean wear[]= it.getBooleanArrayExtra("wear");
     boolean food[]= it.getBooleanArrayExtra("food");
 
-    if (phone[0]){
-        L_cartTitle1.setVisibility(isvisible);
-        L_cartAmount1.setVisibility(isvisible);
-        P_cartImg1.setVisibility(isvisible);
-        T_cartQty1.setVisibility(isvisible);
-        CB_cart1.setVisibility(isvisible);
-    }
-        if (shoe[0]){
-            L_cartTitle2.setVisibility(isvisible);
-            L_cartAmount2.setVisibility(isvisible);
-            P_cartImg2.setVisibility(isvisible);
-            T_cartQty2.setVisibility(isvisible);
-            CB_cart2.setVisibility(isvisible);
-        }
-        if (shirt[0]){
-            L_cartTitle3.setVisibility(isvisible);
-            L_cartAmount3.setVisibility(isvisible);
-            P_cartImg3.setVisibility(isvisible);
-            T_cartQty3.setVisibility(isvisible);
-            CB_cart3.setVisibility(isvisible);
-        }
-        if (wear[0]){
-            L_cartTitle4.setVisibility(isvisible);
-            L_cartAmount4.setVisibility(isvisible);
-            P_cartImg4.setVisibility(isvisible);
-            T_cartQty4.setVisibility(isvisible);
-            CB_cart4.setVisibility(isvisible);
-        }
-        if (food[0]){
-            L_cartTitle5.setVisibility(isvisible);
-            L_cartAmount5.setVisibility(isvisible);
-            P_cartImg5.setVisibility(isvisible);
-            T_cartQty5.setVisibility(isvisible);
-            CB_cart5.setVisibility(isvisible);
-        }
+
+       if (phone[0]) {
+           L_cartTitle1.setVisibility(isvisible);
+           L_cartAmount1.setVisibility(isvisible);
+           P_cartImg1.setVisibility(isvisible);
+           T_cartQty1.setVisibility(isvisible);
+           CB_cart1.setVisibility(isvisible);
+       }
+       if (shoe[0]) {
+           L_cartTitle2.setVisibility(isvisible);
+           L_cartAmount2.setVisibility(isvisible);
+           P_cartImg2.setVisibility(isvisible);
+           T_cartQty2.setVisibility(isvisible);
+           CB_cart2.setVisibility(isvisible);
+       }
+       if (shirt[0]) {
+           L_cartTitle3.setVisibility(isvisible);
+           L_cartAmount3.setVisibility(isvisible);
+           P_cartImg3.setVisibility(isvisible);
+           T_cartQty3.setVisibility(isvisible);
+           CB_cart3.setVisibility(isvisible);
+       }
+       if (wear[0]) {
+           L_cartTitle4.setVisibility(isvisible);
+           L_cartAmount4.setVisibility(isvisible);
+           P_cartImg4.setVisibility(isvisible);
+           T_cartQty4.setVisibility(isvisible);
+           CB_cart4.setVisibility(isvisible);
+       }
+       if (food[0]) {
+           L_cartTitle5.setVisibility(isvisible);
+           L_cartAmount5.setVisibility(isvisible);
+           P_cartImg5.setVisibility(isvisible);
+           T_cartQty5.setVisibility(isvisible);
+           CB_cart5.setVisibility(isvisible);
+       }
 
 
 
@@ -277,6 +278,12 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
         CB_cart3.setVisibility(notvisible);
         CB_cart4.setVisibility(notvisible);
         CB_cart5.setVisibility(notvisible);
+
+        check[0]=false;
+        check[1]=false;
+        check[2]=false;
+        check[3]=false;
+        check[4]=false;
 
 
         return true;
@@ -401,38 +408,41 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
     public void cal(){
         double total=0;
         double one;
-        for(int i=0;i<5;i++){
-            if(check[i]){
-                switch (i){
-                    case 0:
-                        one=Double.parseDouble(L_cartAmount1.getText().toString())*
-                                Double.parseDouble(T_cartQty1.getText().toString());
-                        total+=one;
-                        break;
-                    case 1:
-                        one=Double.parseDouble(L_cartAmount2.getText().toString())*
-                                Double.parseDouble(T_cartQty2.getText().toString());
-                        total+=one;
-                        break;
-                    case 2:
-                        one=Double.parseDouble(L_cartAmount3.getText().toString())*
-                                Double.parseDouble(T_cartQty3.getText().toString());
-                        total+=one;
-                        break;
-                    case 3:
-                        one=Double.parseDouble(L_cartAmount4.getText().toString())*
-                                Double.parseDouble(T_cartQty4.getText().toString());
-                        total+=one;
-                        break;
-                    case 4:
-                        one=Double.parseDouble(L_cartAmount5.getText().toString())*
-                                Double.parseDouble(T_cartQty5.getText().toString());
-                        total+=one;
-                        break;
+        try {
+            for (int i = 0; i < 5; i++) {
+                if (check[i]) {
+                    switch (i) {
+                        case 0:
+                            one = Double.parseDouble(L_cartAmount1.getText().toString()) *
+                                    Double.parseDouble(T_cartQty1.getText().toString());
+                            total += one;
+                            break;
+                        case 1:
+                            one = Double.parseDouble(L_cartAmount2.getText().toString()) *
+                                    Double.parseDouble(T_cartQty2.getText().toString());
+                            total += one;
+                            break;
+                        case 2:
+                            one = Double.parseDouble(L_cartAmount3.getText().toString()) *
+                                    Double.parseDouble(T_cartQty3.getText().toString());
+                            total += one;
+                            break;
+                        case 3:
+                            one = Double.parseDouble(L_cartAmount4.getText().toString()) *
+                                    Double.parseDouble(T_cartQty4.getText().toString());
+                            total += one;
+                            break;
+                        case 4:
+                            one = Double.parseDouble(L_cartAmount5.getText().toString()) *
+                                    Double.parseDouble(T_cartQty5.getText().toString());
+                            total += one;
+                            break;
+                    }
                 }
             }
-        }
+        }catch (Exception e){
 
+        }
 
         totalamount.setText("$"+total);
     }

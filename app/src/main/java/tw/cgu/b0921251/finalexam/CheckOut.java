@@ -46,6 +46,9 @@ class CheckOut extends AppCompatActivity implements
         CB_paynotice.setOnCheckedChangeListener(this);
 
 
+
+
+
         Intent infoofitem=getIntent();
         boolean check[]=infoofitem.getBooleanArrayExtra("打勾的");
         String str1="",str2="",str3="",str4="",str5="";
