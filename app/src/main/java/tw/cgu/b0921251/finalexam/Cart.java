@@ -96,54 +96,56 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
 
 
 
-          /*
-        intent color=getIntent();
+
+       /* Intent getcolor=getIntent();
+
+        int color=getcolor.getIntExtra()
 
         switch (color){
             case 0:
-            B_deleteAll.setBackgroundColor(Color.rgb(128,0,128);
-            B_pay.setBackgroundColor(Color.rgb(128,0,128);
-            B_main.setBackgroundColor(Color.rgb(128,0,128);
-            B_cart.setBackgroundColor(Color.rgb(128,0,128);
-            B_setting.setBackgroundColor(Color.rgb(128,0,128);
+            B_deleteAll.setBackgroundColor(Color.rgb(128,0,128));
+            B_pay.setBackgroundColor(Color.rgb(128,0,128));
+            B_main.setBackgroundColor(Color.rgb(128,0,128));
+            B_cart.setBackgroundColor(Color.rgb(128,0,128));
+            B_setting.setBackgroundColor(Color.rgb(128,0,128));
             break;
 
 
 
 
             case 1:
-            B_deleteAll.setBackgroundColor(Color.rgb(255,255,255);
-            B_pay.setBackgroundColor(Color.rgb(255,255,255);
-            B_main.setBackgroundColor(Color.rgb(255,255,255);
-            B_cart.setBackgroundColor(Color.rgb(255,255,255);
-            B_setting.setBackgroundColor(Color.rgb(255,255,255);
+            B_deleteAll.setBackgroundColor(Color.rgb(255,255,255));
+            B_pay.setBackgroundColor(Color.rgb(255,255,255));
+            B_main.setBackgroundColor(Color.rgb(255,255,255));
+            B_cart.setBackgroundColor(Color.rgb(255,255,255));
+            B_setting.setBackgroundColor(Color.rgb(255,255,255));
             break;
 
             case 2:
-            B_deleteAll.setBackgroundColor(Color.rgb(0,255,0);
-            B_pay.setBackgroundColor(Color.rgb(0,255,0);
-            B_main.setBackgroundColor(Color.rgb(0,255,0);
-            B_cart.setBackgroundColor(Color.rgb(0,255,0);
-            B_setting.setBackgroundColor(Color.rgb(0,255,0);
+            B_deleteAll.setBackgroundColor(Color.rgb(0,255,0));
+            B_pay.setBackgroundColor(Color.rgb(0,255,0));
+            B_main.setBackgroundColor(Color.rgb(0,255,0));
+            B_cart.setBackgroundColor(Color.rgb(0,255,0));
+            B_setting.setBackgroundColor(Color.rgb(0,255,0));
             break;
 
 
 
             case 3:
 
-            B_deleteAll.setBackgroundColor(Color.rgb(255,0,0);
-            B_pay.setBackgroundColor(Color.rgb(255,0,0);
-            B_main.setBackgroundColor(Color.rgb(255,0,0);
-            B_cart.setBackgroundColor(Color.rgb(255,0,0);
-            B_setting.setBackgroundColor(Color.rgb(255,0,0);
+            B_deleteAll.setBackgroundColor(Color.rgb(255,0,0));
+            B_pay.setBackgroundColor(Color.rgb(255,0,0));
+            B_main.setBackgroundColor(Color.rgb(255,0,0));
+            B_cart.setBackgroundColor(Color.rgb(255,0,0));
+            B_setting.setBackgroundColor(Color.rgb(255,0,0));
             break;
 
 
 
-        }
+        }*/
 
 
-        */
+
 
 
 
@@ -179,11 +181,52 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
         CB_cart5.setVisibility(notvisible);
 
 
-    /*
+
     Intent it=getIntent();
-    讀取瑋辰的部分，他傳輸什麼值過來之後再從這邊讀取，然後把有加到購物車的顯示，用.setVisiblity(isvisible)
-    還有預先輸入的數量也get然後settext;
-    */
+
+    boolean phone[]=it.getBooleanArrayExtra("phone");
+    boolean shoe[]=it.getBooleanArrayExtra("shoe");
+    boolean shirt[]= it.getBooleanArrayExtra("shirt");
+    boolean wear[]= it.getBooleanArrayExtra("wear");
+    boolean food[]= it.getBooleanArrayExtra("food");
+
+    if (phone[0]){
+        L_cartTitle1.setVisibility(isvisible);
+        L_cartAmount1.setVisibility(isvisible);
+        P_cartImg1.setVisibility(isvisible);
+        T_cartQty1.setVisibility(isvisible);
+        CB_cart1.setVisibility(isvisible);
+    }
+        if (shoe[0]){
+            L_cartTitle2.setVisibility(isvisible);
+            L_cartAmount2.setVisibility(isvisible);
+            P_cartImg2.setVisibility(isvisible);
+            T_cartQty2.setVisibility(isvisible);
+            CB_cart2.setVisibility(isvisible);
+        }
+        if (shirt[0]){
+            L_cartTitle3.setVisibility(isvisible);
+            L_cartAmount3.setVisibility(isvisible);
+            P_cartImg3.setVisibility(isvisible);
+            T_cartQty3.setVisibility(isvisible);
+            CB_cart3.setVisibility(isvisible);
+        }
+        if (wear[0]){
+            L_cartTitle4.setVisibility(isvisible);
+            L_cartAmount4.setVisibility(isvisible);
+            P_cartImg4.setVisibility(isvisible);
+            T_cartQty4.setVisibility(isvisible);
+            CB_cart4.setVisibility(isvisible);
+        }
+        if (food[0]){
+            L_cartTitle5.setVisibility(isvisible);
+            L_cartAmount5.setVisibility(isvisible);
+            P_cartImg5.setVisibility(isvisible);
+            T_cartQty5.setVisibility(isvisible);
+            CB_cart5.setVisibility(isvisible);
+        }
+
+
 
     }
 
@@ -293,17 +336,17 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
 
 
     public void gomain(View v){
-       /* Intent gom=new Intent();
-        gom.setClass(this,main的檔案);
+        Intent gom=new Intent();
+        gom.setClass(this,shopping.class);
         startActivity(gom);
-        */
+
     }
 
     public void gosetting(View v){
-         /* Intent gos=new Intent();
-        gos.setClass(this,setting的檔案);
+          Intent gos=new Intent();
+        gos.setClass(this,setting.class);
         startActivity(gos);
-        */
+
     }
 
     public void gopay(View v){
@@ -319,22 +362,27 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
                         gop.putExtra("第一物品名",L_cartTitle1.getText().toString());
                         gop.putExtra("第一物品價格",L_cartAmount1.getText().toString());
                         gop.putExtra("第一物品數量",T_cartQty1.getText().toString());
+                        break;
                     case 1:
                         gop.putExtra("第二物品名",L_cartTitle2.getText().toString());
                         gop.putExtra("第二物品價格",L_cartAmount2.getText().toString());
                         gop.putExtra("第二物品數量",T_cartQty2.getText().toString());
+                        break;
                     case 2:
                         gop.putExtra("第三物品名",L_cartTitle3.getText().toString());
                         gop.putExtra("第三物品價格",L_cartAmount3.getText().toString());
                         gop.putExtra("第三物品數量",T_cartQty3.getText().toString());
+                        break;
                     case 3:
                         gop.putExtra("第四物品名",L_cartTitle4.getText().toString());
                         gop.putExtra("第四物品價格",L_cartAmount4.getText().toString());
                         gop.putExtra("第四物品數量",T_cartQty4.getText().toString());
+                        break;
                     case 4:
                         gop.putExtra("第五物品名",L_cartTitle5.getText().toString());
                         gop.putExtra("第五物品價格",L_cartAmount5.getText().toString());
                         gop.putExtra("第五物品數量",T_cartQty5.getText().toString());
+                        break;
 
 
 
