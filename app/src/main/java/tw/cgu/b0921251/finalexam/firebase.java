@@ -21,6 +21,7 @@ public class firebase {
     private final static String url_key = ".json?auth=fEsM7TRIFJWezuFDFEqLS3Qze0WrmAa0wmPuZk5M";
     private static Object MainActivity;
 
+    static int color = 0 ;
 
     static boolean database_Delete(String dic) {
         try{

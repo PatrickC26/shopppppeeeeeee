@@ -43,6 +43,7 @@ public class login extends AppCompatActivity {
     EditText T_username, T_password;
     Button B_login;
     String PSWD = "";
+    static String userName = "";
 
 
     // setting
@@ -58,8 +59,12 @@ public class login extends AppCompatActivity {
         T_username = findViewById(R.id.T_username);
         T_password = findViewById(R.id.T_password);
         B_login = findViewById(R.id.B_login);
+    }
+
+    // login page
+    public void loginButton(View v) throws InterruptedException {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference pswd = database.getReference("account/a/pswd");
+        DatabaseReference pswd = database.getReference("account/" + T_username.getText().toString() + "/pswd");
         pswd.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -73,12 +78,13 @@ public class login extends AppCompatActivity {
                 System.out.println("Failed to read value." + error.toException());
             }
         });
-    }
 
-    // login page
-    public void loginButton(View v){
+        Thread.sleep(1000);
+
         if (PSWD.equals(T_password.getText().toString())) {
+            userName = T_username.getText().toString();
             startActivity(new Intent(this, shopping.class));
+
         }
         else {
             AlertDialog.Builder loginUnsuccessfull = new AlertDialog.Builder(this);

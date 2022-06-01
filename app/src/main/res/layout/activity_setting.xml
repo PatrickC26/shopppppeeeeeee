@@ -58,6 +58,7 @@
                 android:textSize="30dp" />
 
             <RadioGroup
+                android:id="@+id/RG"
                 android:layout_width="349dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1">

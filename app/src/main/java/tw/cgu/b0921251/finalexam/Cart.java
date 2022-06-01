@@ -15,6 +15,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class Cart extends AppCompatActivity implements View.OnLongClickListener,
         CompoundButton.OnCheckedChangeListener, TextWatcher {
 
@@ -29,6 +35,7 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
     boolean phone[], shoe[],shirt[],wear[],food[];
     int notvisible=View.GONE;
     int isvisible=View.VISIBLE;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,58 +103,59 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
 
 
 
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference colorFB = database.getReference("account/" + login.userName + "/color");
+        colorFB.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                try {
+                    String value = dataSnapshot.getValue(String.class);
+                    int themeColor = Integer.parseInt(value);
 
+                    System.out.println(themeColor);
 
-       /* Intent getcolor=getIntent();
+                    switch (themeColor){
+                        case 0:
+                            B_deleteAll.setBackgroundColor(Color.rgb(128,0,128));
+                            B_pay.setBackgroundColor(Color.rgb(128,0,128));
+                            B_main.setBackgroundColor(Color.rgb(128,0,128));
+                            B_cart.setBackgroundColor(Color.rgb(128,0,128));
+                            B_setting.setBackgroundColor(Color.rgb(128,0,128));
+                            break;
 
-        int color=getcolor.getIntExtra()
+                        case 1:
+                            B_deleteAll.setBackgroundColor(Color.BLACK);
+                            B_pay.setBackgroundColor(Color.BLACK);
+                            B_main.setBackgroundColor(Color.BLACK);
+                            B_cart.setBackgroundColor(Color.BLACK);
+                            B_setting.setBackgroundColor(Color.BLACK);
+                            break;
 
-        switch (color){
-            case 0:
-            B_deleteAll.setBackgroundColor(Color.rgb(128,0,128));
-            B_pay.setBackgroundColor(Color.rgb(128,0,128));
-            B_main.setBackgroundColor(Color.rgb(128,0,128));
-            B_cart.setBackgroundColor(Color.rgb(128,0,128));
-            B_setting.setBackgroundColor(Color.rgb(128,0,128));
-            break;
+                        case 2:
+                            B_deleteAll.setBackgroundColor(Color.rgb(0,255,0));
+                            B_pay.setBackgroundColor(Color.rgb(0,255,0));
+                            B_main.setBackgroundColor(Color.rgb(0,255,0));
+                            B_cart.setBackgroundColor(Color.rgb(0,255,0));
+                            B_setting.setBackgroundColor(Color.rgb(0,255,0));
+                            break;
+                        case 3:
 
+                            B_deleteAll.setBackgroundColor(Color.rgb(255,0,0));
+                            B_pay.setBackgroundColor(Color.rgb(255,0,0));
+                            B_main.setBackgroundColor(Color.rgb(255,0,0));
+                            B_cart.setBackgroundColor(Color.rgb(255,0,0));
+                            B_setting.setBackgroundColor(Color.rgb(255,0,0));
+                            break;
+                    }
+                }
+                catch (Exception e){   }
+            }
 
-
-
-            case 1:
-            B_deleteAll.setBackgroundColor(Color.rgb(255,255,255));
-            B_pay.setBackgroundColor(Color.rgb(255,255,255));
-            B_main.setBackgroundColor(Color.rgb(255,255,255));
-            B_cart.setBackgroundColor(Color.rgb(255,255,255));
-            B_setting.setBackgroundColor(Color.rgb(255,255,255));
-            break;
-
-            case 2:
-            B_deleteAll.setBackgroundColor(Color.rgb(0,255,0));
-            B_pay.setBackgroundColor(Color.rgb(0,255,0));
-            B_main.setBackgroundColor(Color.rgb(0,255,0));
-            B_cart.setBackgroundColor(Color.rgb(0,255,0));
-            B_setting.setBackgroundColor(Color.rgb(0,255,0));
-            break;
-
-
-
-            case 3:
-
-            B_deleteAll.setBackgroundColor(Color.rgb(255,0,0));
-            B_pay.setBackgroundColor(Color.rgb(255,0,0));
-            B_main.setBackgroundColor(Color.rgb(255,0,0));
-            B_cart.setBackgroundColor(Color.rgb(255,0,0));
-            B_setting.setBackgroundColor(Color.rgb(255,0,0));
-            break;
-
-
-
-        }*/
-
-
-
-
+            @Override
+            public void onCancelled(DatabaseError error) {
+                System.out.println("Failed to read value." + error.toException());
+            }
+        });
 
 
 
