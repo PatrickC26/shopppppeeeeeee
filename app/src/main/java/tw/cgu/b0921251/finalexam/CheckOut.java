@@ -15,6 +15,13 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ListView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 class CheckOut extends AppCompatActivity implements
     CompoundButton.OnCheckedChangeListener, DialogInterface.OnClickListener {
 
@@ -45,39 +52,54 @@ class CheckOut extends AppCompatActivity implements
         CB_paynotice=findViewById(R.id.CB_paynotice);
         CB_paynotice.setOnCheckedChangeListener(this);
 
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference colorFB = database.getReference("account/" + login.userName + "/color");
+        colorFB.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                try {
+                    String value = dataSnapshot.getValue(String.class);
+                    int themeColor = Integer.parseInt(value);
 
-/* Intent getcolor=getIntent();
+                    System.out.println(themeColor);
 
-        int color=getcolor.getIntExtra()
+                    switch (themeColor){
+                        case 0:
+                            B_back.setBackgroundColor(Color.rgb(128,0,128));
+                            B_send.setBackgroundColor(Color.rgb(128,0,128));
 
-        switch (color){
-            case 0:
-            B_back.setBackgroundColor(Color.rgb(128,0,128));
-            B_send.setBackgroundColor(Color.rgb(128,0,128));
-
-            break;
+                            break;
 
 
-            case 1:
-            B_back.setBackgroundColor(Color.rgb(255,255,255));
-            B_send.setBackgroundColor(Color.rgb(255,255,255));
+                        case 1:
+                            B_back.setBackgroundColor(Color.rgb(255,255,255));
+                            B_send.setBackgroundColor(Color.rgb(255,255,255));
 
-            break;
+                            break;
 
-            case 2:
-            B_back.setBackgroundColor(Color.rgb(0,255,0));
-            B_send.setBackgroundColor(Color.rgb(0,255,0));
+                        case 2:
+                            B_back.setBackgroundColor(Color.rgb(0,255,0));
+                            B_send.setBackgroundColor(Color.rgb(0,255,0));
 
-            break;
+                            break;
 
-            case 3:
+                        case 3:
 
-            B_back.setBackgroundColor(Color.rgb(255,0,0));
-            B_send.setBackgroundColor(Color.rgb(255,0,0));
+                            B_back.setBackgroundColor(Color.rgb(255,0,0));
+                            B_send.setBackgroundColor(Color.rgb(255,0,0));
 
-            break;
+                            break;
 
-        }*/
+                    }
+                }
+                catch (Exception e){   }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                System.out.println("Failed to read value." + error.toException());
+            }
+        });
 
 
         Intent infoofitem=getIntent();
