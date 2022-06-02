@@ -295,6 +295,13 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
         check[4]=false;
 
 
+        phone[0]=false;
+        wear[0]=false;
+        shirt[0]=false;
+        food[0]=false;
+        shoe[0]=false;
+
+
         return true;
     }
 
