@@ -156,7 +156,14 @@ class CheckOut extends AppCompatActivity implements
             }
         }
         String str6=String.valueOf(total);
-        String str[]={str1,str2,str3,str4,str5,str6};
+        if(str1!="") items.add(str1);
+        if(str2!="") items.add(str2);
+        if(str3!="") items.add(str3);
+        if(str4!="") items.add(str4);
+        if(str5!="") items.add(str5);
+
+        items.add(str6);
+
 
         items=new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,str);
         L_item.setAdapter(items);
