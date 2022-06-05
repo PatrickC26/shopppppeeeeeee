@@ -13,6 +13,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -33,6 +34,7 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
     CheckBox CB_cart1,CB_cart2,CB_cart3,CB_cart4,CB_cart5;
     EditText T_cartQty1,T_cartQty2,T_cartQty3,T_cartQty4,T_cartQty5;
     ImageView P_cartImg1,P_cartImg2,P_cartImg3,P_cartImg4,P_cartImg5;
+    LinearLayout l1,l2,l3,l4,l5;
     boolean[] check={false,false,false,false,false};
     boolean phone[], shoe[],shirt[],wear[],food[];
     int notvisible=View.GONE;
@@ -44,6 +46,12 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
 
+
+        l1=findViewById(R.id.l1);
+        l2=findViewById(R.id.l2);
+        l3=findViewById(R.id.l3);
+        l4=findViewById(R.id.l4);
+        l5=findViewById(R.id.l5);
 
 
 
@@ -162,37 +170,11 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
         });
 
 
-
-        L_cartTitle1.setVisibility(notvisible);
-        L_cartTitle2.setVisibility(notvisible);
-        L_cartTitle3.setVisibility(notvisible);
-        L_cartTitle4.setVisibility(notvisible);
-        L_cartTitle5.setVisibility(notvisible);
-
-        L_cartAmount1.setVisibility(notvisible);
-        L_cartAmount2.setVisibility(notvisible);
-        L_cartAmount3.setVisibility(notvisible);
-        L_cartAmount4.setVisibility(notvisible);
-        L_cartAmount5.setVisibility(notvisible);
-
-        P_cartImg1.setVisibility(notvisible);
-        P_cartImg2.setVisibility(notvisible);
-        P_cartImg3.setVisibility(notvisible);
-        P_cartImg4.setVisibility(notvisible);
-        P_cartImg5.setVisibility(notvisible);
-
-        T_cartQty1.setVisibility(notvisible);
-        T_cartQty2.setVisibility(notvisible);
-        T_cartQty3.setVisibility(notvisible);
-        T_cartQty4.setVisibility(notvisible);
-        T_cartQty5.setVisibility(notvisible);
-
-        CB_cart1.setVisibility(notvisible);
-        CB_cart2.setVisibility(notvisible);
-        CB_cart3.setVisibility(notvisible);
-        CB_cart4.setVisibility(notvisible);
-        CB_cart5.setVisibility(notvisible);
-
+        l1.setVisibility(notvisible);
+        l2.setVisibility(notvisible);
+        l3.setVisibility(notvisible);
+        l4.setVisibility(notvisible);
+        l5.setVisibility(notvisible);
 
 
     Intent it=getIntent();
@@ -205,39 +187,19 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
 
 
        if (phone[0]) {
-           L_cartTitle1.setVisibility(isvisible);
-           L_cartAmount1.setVisibility(isvisible);
-           P_cartImg1.setVisibility(isvisible);
-           T_cartQty1.setVisibility(isvisible);
-           CB_cart1.setVisibility(isvisible);
+           l1.setVisibility(isvisible);
        }
        if (wear[0]) {
-           L_cartTitle2.setVisibility(isvisible);
-           L_cartAmount2.setVisibility(isvisible);
-           P_cartImg2.setVisibility(isvisible);
-           T_cartQty2.setVisibility(isvisible);
-           CB_cart2.setVisibility(isvisible);
+           l2.setVisibility(isvisible);
        }
        if (shirt[0]) {
-           L_cartTitle3.setVisibility(isvisible);
-           L_cartAmount3.setVisibility(isvisible);
-           P_cartImg3.setVisibility(isvisible);
-           T_cartQty3.setVisibility(isvisible);
-           CB_cart3.setVisibility(isvisible);
+           l3.setVisibility(isvisible);
        }
        if (shoe[0]) {
-           L_cartTitle4.setVisibility(isvisible);
-           L_cartAmount4.setVisibility(isvisible);
-           P_cartImg4.setVisibility(isvisible);
-           T_cartQty4.setVisibility(isvisible);
-           CB_cart4.setVisibility(isvisible);
+           l4.setVisibility(isvisible);
        }
        if (food[0]) {
-           L_cartTitle5.setVisibility(isvisible);
-           L_cartAmount5.setVisibility(isvisible);
-           P_cartImg5.setVisibility(isvisible);
-           T_cartQty5.setVisibility(isvisible);
-           CB_cart5.setVisibility(isvisible);
+           l5.setVisibility(isvisible);
        }
 
 
@@ -262,35 +224,11 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
     @Override
     public boolean onLongClick(View view) {
 
-        L_cartTitle1.setVisibility(notvisible);
-        L_cartTitle2.setVisibility(notvisible);
-        L_cartTitle3.setVisibility(notvisible);
-        L_cartTitle4.setVisibility(notvisible);
-        L_cartTitle5.setVisibility(notvisible);
-
-        L_cartAmount1.setVisibility(notvisible);
-        L_cartAmount2.setVisibility(notvisible);
-        L_cartAmount3.setVisibility(notvisible);
-        L_cartAmount4.setVisibility(notvisible);
-        L_cartAmount5.setVisibility(notvisible);
-
-        P_cartImg1.setVisibility(notvisible);
-        P_cartImg2.setVisibility(notvisible);
-        P_cartImg3.setVisibility(notvisible);
-        P_cartImg4.setVisibility(notvisible);
-        P_cartImg5.setVisibility(notvisible);
-
-        T_cartQty1.setVisibility(notvisible);
-        T_cartQty2.setVisibility(notvisible);
-        T_cartQty3.setVisibility(notvisible);
-        T_cartQty4.setVisibility(notvisible);
-        T_cartQty5.setVisibility(notvisible);
-
-        CB_cart1.setVisibility(notvisible);
-        CB_cart2.setVisibility(notvisible);
-        CB_cart3.setVisibility(notvisible);
-        CB_cart4.setVisibility(notvisible);
-        CB_cart5.setVisibility(notvisible);
+        l1.setVisibility(notvisible);
+        l2.setVisibility(notvisible);
+        l3.setVisibility(notvisible);
+        l4.setVisibility(notvisible);
+        l5.setVisibility(notvisible);
 
         check[0]=false;
         check[1]=false;
