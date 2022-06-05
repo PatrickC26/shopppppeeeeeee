@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Finalexam">
         <activity
+            android:name=".check_out_F"
+            android:exported="false" />
+        <activity
             android:name=".login_generate"
             android:exported="false" />
         <activity

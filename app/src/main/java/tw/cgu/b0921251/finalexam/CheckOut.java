@@ -36,6 +36,8 @@ class CheckOut extends AppCompatActivity implements
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        System.out.println("A");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_out);
 
@@ -52,8 +54,8 @@ class CheckOut extends AppCompatActivity implements
         CB_paynotice=findViewById(R.id.CB_paynotice);
         CB_paynotice.setOnCheckedChangeListener(this);
 
-//        if (login.userName.isEmpty())
-//            finish();
+        if (login.userName.isEmpty())
+            finish();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference colorFB = database.getReference("account/" + login.userName + "/color");
@@ -70,7 +72,6 @@ class CheckOut extends AppCompatActivity implements
                         case 0:
                             B_back.setBackgroundColor(Color.rgb(128,0,128));
                             B_send.setBackgroundColor(Color.rgb(128,0,128));
-
                             break;
 
 
@@ -90,7 +91,6 @@ class CheckOut extends AppCompatActivity implements
 
                             B_back.setBackgroundColor(Color.rgb(255,0,0));
                             B_send.setBackgroundColor(Color.rgb(255,0,0));
-
                             break;
 
                     }

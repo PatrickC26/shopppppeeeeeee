@@ -393,7 +393,7 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
 
     public void gopay(View v){
         Intent gop=new Intent();
-        gop.setClass(this,CheckOut.class);
+        gop.setClass(this,check_out_F.class);
 
         gop.putExtra("打勾的",check);
 
