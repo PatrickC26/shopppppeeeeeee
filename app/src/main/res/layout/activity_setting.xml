@@ -46,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="User 您好"
-                    android:textSize="30dp" />
+                    android:textSize="30sp" />
 
             </LinearLayout>
 
@@ -55,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text=" APP顏色"
-                android:textSize="30dp" />
+                android:textSize="30sp" />
 
             <RadioGroup
                 android:id="@+id/RG"
