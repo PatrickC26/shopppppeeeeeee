@@ -61,38 +61,27 @@ implements TextWatcher{
         T_password = findViewById(R.id.T_password);
         B_login = findViewById(R.id.B_login);
 
+        T_username.setText("");
+        T_password.setText("");
+
         T_username.addTextChangedListener(this);
     }
 
     // login page
     public void loginButton(View v) throws InterruptedException {
-//        FirebaseDatabase database = FirebaseDatabase.getInstance();
-//        DatabaseReference pswd = database.getReference("account/" + T_username.getText().toString() + "/pswd");
-//        pswd.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                String value = dataSnapshot.getValue(String.class);
-//                System.out.println(value);
-//                PSWD = value.toString();
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError error) {
-//                System.out.println("Failed to read value." + error.toException());
-//            }
-//        });
-
-
-        if (PSWD.equals(T_password.getText().toString())) {
-            userName = T_username.getText().toString();
-            startActivity(new Intent(this, shopping.class));
-
+        try {
+            if (PSWD.equals(T_password.getText().toString())) {
+                userName = T_username.getText().toString();
+                startActivity(new Intent(this, shopping.class));
+            } else {
+                AlertDialog.Builder loginUnsuccessfull = new AlertDialog.Builder(this);
+                loginUnsuccessfull.setMessage("登入失敗！").setTitle("錯誤").setPositiveButton("OK", null).show();
+                T_username.setText("");
+                T_password.setText("");
+            }
         }
-        else {
-            AlertDialog.Builder loginUnsuccessfull = new AlertDialog.Builder(this);
-            loginUnsuccessfull.setMessage("登入失敗！").setTitle("錯誤").setPositiveButton("OK", null).show();
-            T_username.setText("");
-            T_password.setText("");
+        catch(Exception e){
+            e.printStackTrace();
         }
     }
 
@@ -111,20 +100,31 @@ implements TextWatcher{
 
     @Override
     public void afterTextChanged(Editable editable) {
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference pswd = database.getReference("account/" + T_username.getText().toString() + "/pswd");
-        pswd.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                String value = dataSnapshot.getValue(String.class);
-                System.out.println(value);
-                PSWD = value.toString();
-            }
+        try {
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference pswd = database.getReference("account/" + T_username.getText().toString() + "/pswd");
+            pswd.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    try {
+                        String value = dataSnapshot.getValue(String.class);
+                        System.out.println(value);
+                        if (!value.equals(null))
+                            PSWD = value.toString();
+                    }
+                    catch (Exception e1){
+                        e1.printStackTrace();
+                    }
+                }
 
-            @Override
-            public void onCancelled(DatabaseError error) {
-                System.out.println("Failed to read value." + error.toException());
-            }
-        });
+                @Override
+                public void onCancelled(DatabaseError error) {
+                    System.out.println("Failed to read value." + error.toException());
+                }
+            });
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }
