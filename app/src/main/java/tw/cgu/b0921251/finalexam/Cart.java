@@ -21,6 +21,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Arrays;
+
 public class Cart extends AppCompatActivity implements View.OnLongClickListener,
         CompoundButton.OnCheckedChangeListener, TextWatcher {
 
@@ -394,6 +396,7 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
     public void gopay(View v){
         Intent gop=new Intent();
         gop.setClass(this,check_out_F.class);
+
 
         gop.putExtra("打勾的",check);
 

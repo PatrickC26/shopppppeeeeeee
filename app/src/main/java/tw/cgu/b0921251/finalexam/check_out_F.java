@@ -22,6 +22,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Arrays;
+
 public class check_out_F extends AppCompatActivity implements
         CompoundButton.OnCheckedChangeListener, DialogInterface.OnClickListener {
 
@@ -152,11 +154,31 @@ public class check_out_F extends AppCompatActivity implements
             }
         }
 
-        String str6=String.valueOf(total);
+        String str6 = "總額為：" + String.valueOf(total);
         String str[]={str1,str2,str3,str4,str5,str6};
 
-        items=new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,str);
-        L_item.setAdapter(items);
+        try {
+            String[] new_str = new String[6];
+            for (int i = 0, j = 0; i < str.length; i++) {
+                if (!str[i].isEmpty())
+                    j++;
+                new_str = new String[j];
+            }
+            for (int i = 0, j = 0; i < str.length; i++) {
+                if (!str[i].isEmpty())
+                    new_str[i - j] = str[i];
+                else
+                    j++;
+
+            }
+            System.out.println(Arrays.deepToString(new_str));
+
+            items=new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,new_str);
+            L_item.setAdapter(items);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     boolean ischeck=false;
