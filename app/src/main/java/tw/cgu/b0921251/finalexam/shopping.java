@@ -37,6 +37,7 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
     boolean sh[] = {false,false,false,false};//shirt
     boolean w[] = {false,false};//wear
     boolean f[] = {false,false};//food
+    int flag=0;
     int nowcolor=0;
     int producttotal[] ={0,0,0,0};//auto find how much mun of each kind product????
     int filternum=0;
@@ -113,7 +114,7 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
         filter.setOnItemSelectedListener(this);
 
         Intent it = getIntent();
-        int flag = it.getIntExtra("flag",0);
+        flag = it.getIntExtra("flag",0);
         if(flag==1){
             p=it.getBooleanArrayExtra("phone");
             s=it.getBooleanArrayExtra("shoe");
@@ -452,6 +453,7 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
         it.putExtra("shirt",sh);
         it.putExtra("wear",w);
         it.putExtra("food",f);
+        it.putExtra("flag",flag);
         finish();
         startActivity(it);
     }
