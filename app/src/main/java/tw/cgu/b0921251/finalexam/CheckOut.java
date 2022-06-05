@@ -115,6 +115,7 @@ class CheckOut extends AppCompatActivity implements
                                 infoofitem.getStringExtra("第一物品數量");
                         total+=Integer.parseInt(infoofitem.getStringExtra("第一物品價格"))*
                                 Integer.parseInt(infoofitem.getStringExtra("第一物品數量"));
+                        break;
 
                     case 1:
                         str2=infoofitem.getStringExtra("第二物品名")+"  $"+
@@ -122,6 +123,7 @@ class CheckOut extends AppCompatActivity implements
                                 infoofitem.getStringExtra("第二物品數量");
                         total+=Integer.parseInt(infoofitem.getStringExtra("第二物品價格"))*
                                 Integer.parseInt(infoofitem.getStringExtra("第二物品數量"));
+                        break;
 
                     case 2:
                         str3=infoofitem.getStringExtra("第三物品名")+"  $"+
@@ -129,6 +131,7 @@ class CheckOut extends AppCompatActivity implements
                                 infoofitem.getStringExtra("第三物品數量");
                         total+=Integer.parseInt(infoofitem.getStringExtra("第三物品價格"))*
                                 Integer.parseInt(infoofitem.getStringExtra("第三物品數量"));
+                        break;
 
                     case 3:
                         str4=infoofitem.getStringExtra("第四物品名")+"  $"+
@@ -136,6 +139,7 @@ class CheckOut extends AppCompatActivity implements
                                 infoofitem.getStringExtra("第四物品數量");
                         total+=Integer.parseInt(infoofitem.getStringExtra("第四物品價格"))*
                                 Integer.parseInt(infoofitem.getStringExtra("第四物品數量"));
+                        break;
 
                     case 4:
 
@@ -144,6 +148,7 @@ class CheckOut extends AppCompatActivity implements
                                 infoofitem.getStringExtra("第五物品數量");
                         total+=Integer.parseInt(infoofitem.getStringExtra("第五物品價格"))*
                                 Integer.parseInt(infoofitem.getStringExtra("第五物品數量"));
+                        break;
 
 
 
