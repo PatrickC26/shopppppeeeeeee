@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,6 +21,7 @@ public class setting extends AppCompatActivity
 implements RadioGroup.OnCheckedChangeListener {
 
 Button toShop, toCart, toSetting;
+TextView L_user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ Button toShop, toCart, toSetting;
         toShop = findViewById(R.id.toShop);
         toCart = findViewById(R.id.toCart);
         toSetting = findViewById(R.id.toSetting);
+        L_user = findViewById(R.id.L_user);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference colorFB = database.getReference("account/" + login.userName + "/color");
@@ -83,6 +86,23 @@ Button toShop, toCart, toSetting;
                 System.out.println("Failed to read value." + error.toException());
             }
         });
+
+        DatabaseReference Uname = database.getReference("account/" + login.userName + "/name");
+        Uname.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                try {
+                    String value = dataSnapshot.getValue(String.class);
+                    L_user.setText(value + " 您好");
+                }
+                catch (Exception e){   }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                System.out.println("Failed to read value." + error.toException());
+            }
+        });
     }
 
 
@@ -90,8 +110,7 @@ Button toShop, toCart, toSetting;
     public void MainOnClick(View v){ startActivity(new Intent(this, shopping.class));}
     public void CartOnClick(View v){ startActivity(new Intent(this, Cart.class));}
     public void SettingOnClick(View v){ startActivity(new Intent(this, setting.class));}
-
-    public void logout (View v){ new Intent(this, setting.class);}
+    public void logout (View v){ new Intent(this, login.class);}
 
 
     @Override

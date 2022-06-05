@@ -12,8 +12,9 @@
         <entry key="app/src/main/res/layout/activity_check_out.xml" value="0.22452545166015625" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1203125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2178802443855077" />
-        <entry key="app/src/main/res/layout/activity_setting.xml" value="0.18636363636363637" />
+        <entry key="app/src/main/res/layout/activity_setting.xml" value="0.18181818181818182" />
         <entry key="app/src/main/res/layout/activity_shopping.xml" value="0.28740386962890624" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.129" />
       </map>
     </option>
   </component>
