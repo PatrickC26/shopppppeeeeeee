@@ -380,6 +380,12 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
     public void gosetting(View v){
         Intent gos=new Intent();
         gos.setClass(this,setting.class);
+        gos.putExtra("phone",phone);
+        gos.putExtra("shirt",shirt);
+        gos.putExtra("shoe",shoe);
+        gos.putExtra("wear",wear);
+        gos.putExtra("food",food);
+        gos.putExtra("flag",1);
         finish();
         startActivity(gos);
 
