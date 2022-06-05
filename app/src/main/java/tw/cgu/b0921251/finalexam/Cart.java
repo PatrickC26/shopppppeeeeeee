@@ -254,6 +254,7 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
 
     @Override
     public void afterTextChanged(Editable editable) {
+
         cal();
     }
 
@@ -395,8 +396,6 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
         Intent gop=new Intent();
         gop.setClass(this,CheckOut.class);
 
-        gop.putExtra("打勾的",check);
-
         for(int i=0;i<5;i++){
             if(check[i]){
                 switch (i){
@@ -426,11 +425,15 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
                         gop.putExtra("第五物品數量",T_cartQty5.getText().toString());
                         break;
 
+
+
+
+
                 }
             }
         }
 
-
+        gop.putExtra("打勾的",check);
         startActivity(gop);
 
 
