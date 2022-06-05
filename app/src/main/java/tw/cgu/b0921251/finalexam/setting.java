@@ -20,8 +20,14 @@ import com.google.firebase.database.ValueEventListener;
 public class setting extends AppCompatActivity
 implements RadioGroup.OnCheckedChangeListener {
 
-Button toShop, toCart, toSetting;
-TextView L_user;
+    Button toShop, toCart, toSetting;
+    TextView L_user;
+
+    boolean p[] = {false,false,false,false};//phone
+    boolean s[] = {false,false};//shoe
+    boolean sh[] = {false,false,false,false};//shirt
+    boolean w[] = {false,false};//wear
+    boolean f[] = {false,false};//food
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +41,19 @@ TextView L_user;
         toCart = findViewById(R.id.toCart);
         toSetting = findViewById(R.id.toSetting);
         L_user = findViewById(R.id.L_user);
+
+        Intent it = getIntent();
+        int flag = it.getIntExtra("flag",0);
+        if(flag==1){
+            p=it.getBooleanArrayExtra("phone");
+            s=it.getBooleanArrayExtra("shoe");
+            sh= it.getBooleanArrayExtra("shirt");
+            w= it.getBooleanArrayExtra("wear");
+            f= it.getBooleanArrayExtra("food");
+        }
+
+        if (login.userName.isEmpty())
+            finish();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference colorFB = database.getReference("account/" + login.userName + "/color");
@@ -107,10 +126,19 @@ TextView L_user;
 
 
 
-    public void MainOnClick(View v){ startActivity(new Intent(this, shopping.class));}
-    public void CartOnClick(View v){ startActivity(new Intent(this, Cart.class));}
-    public void SettingOnClick(View v){ startActivity(new Intent(this, setting.class));}
-    public void logout (View v){ new Intent(this, login.class);}
+    public void MainOnClick(View v){ finish(); startActivity(new Intent(this, shopping.class));}
+    public void CartOnClick(View v){
+        Intent it = new Intent(this,Cart.class);
+        it.putExtra("phone",p);
+        it.putExtra("shoe",s);
+        it.putExtra("shirt",sh);
+        it.putExtra("wear",w);
+        it.putExtra("food",f);
+        finish();
+        startActivity(it);
+    }
+    public void SettingOnClick(View v){ }
+    public void logout (View v){ finish(); System.out.println("logout");}
 
 
     @Override

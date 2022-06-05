@@ -93,12 +93,14 @@
         android:id="@+id/B_generateAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="GenerateAccount"
         android:text="Generate Account" />
 
     <Button
         android:id="@+id/B_forgetPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Forget Password" />
+        android:text="Forget Password"
+        android:visibility="gone" />
 
 </LinearLayout>

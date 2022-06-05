@@ -102,14 +102,12 @@ implements TextWatcher{
     public void CartOnClick(View v){ startActivity(new Intent(this, Cart.class));}
     public void SettingOnClick(View v){ startActivity(new Intent(this, setting.class));}
 
+    public void GenerateAccount(View v){ startActivity(new Intent(this, login_generate.class));}
 
     @Override
     public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
-
     @Override
-    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-    }
+    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
 
     @Override
     public void afterTextChanged(Editable editable) {

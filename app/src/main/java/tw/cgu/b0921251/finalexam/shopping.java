@@ -123,6 +123,8 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
         }
 
 
+        if (login.userName.isEmpty())
+            finish();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference colorFB = database.getReference("account/" + login.userName + "/color");
@@ -430,6 +432,7 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
 
     public void MainOnClick(View v){
         Intent it = new Intent(this,shopping.class);
+        finish();
         startActivity(it);
     }
     public void CartOnClick(View v){
@@ -439,10 +442,12 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
         it.putExtra("shirt",sh);
         it.putExtra("wear",w);
         it.putExtra("food",f);
+        finish();
         startActivity(it);
     }
     public void SettingOnClick(View v){
         Intent it = new Intent(this,setting.class);
+        finish();
         startActivity(it);
     }
 

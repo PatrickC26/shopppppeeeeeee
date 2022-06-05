@@ -102,6 +102,8 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
         T_cartQty5.addTextChangedListener(this);
 
 
+        if (login.userName.isEmpty())
+            finish();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference colorFB = database.getReference("account/" + login.userName + "/color");
@@ -359,6 +361,7 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
 
 
     public void gomain(View v){
+
         Intent gom=new Intent();
 
         gom.setClass(this,shopping.class);
@@ -369,13 +372,15 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
         gom.putExtra("wear",wear);
         gom.putExtra("food",food);
         gom.putExtra("flag",1);
+        finish();
         startActivity(gom);
 
     }
 
     public void gosetting(View v){
-          Intent gos=new Intent();
+        Intent gos=new Intent();
         gos.setClass(this,setting.class);
+        finish();
         startActivity(gos);
 
     }
@@ -414,10 +419,6 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
                         gop.putExtra("第五物品價格",L_cartAmount5.getText().toString());
                         gop.putExtra("第五物品數量",T_cartQty5.getText().toString());
                         break;
-
-
-
-
 
                 }
             }
