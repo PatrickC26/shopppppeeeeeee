@@ -52,6 +52,9 @@ class CheckOut extends AppCompatActivity implements
         CB_paynotice=findViewById(R.id.CB_paynotice);
         CB_paynotice.setOnCheckedChangeListener(this);
 
+        if (login.userName.isEmpty())
+            finish();
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference colorFB = database.getReference("account/" + login.userName + "/color");
         colorFB.addValueEventListener(new ValueEventListener() {
