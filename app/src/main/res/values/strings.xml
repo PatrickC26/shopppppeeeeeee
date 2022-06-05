@@ -84,4 +84,13 @@ A15 仿生晶片\n
     <string name="食物1">小惡魔奶油雞肉義大利麵</string>
     <string name="食物1詳細">火辣辣的小惡魔，遇上香濃可口的奶油醬，要讓你邊吃邊噴火，卻又捨不得停口。</string>
     <string name="食物1金額">270</string>
+    <string name="title_activity_login_generate_account">Login_generateAccount</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 </resources>

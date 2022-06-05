@@ -13,6 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Finalexam">
         <activity
+            android:name=".login_generate"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.Login_generateAccount"
+            android:exported="false"
+            android:label="@string/title_activity_login_generate_account" />
+        <activity
             android:name=".CheckOut"
             android:exported="false" />
         <activity

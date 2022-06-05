@@ -37,7 +37,7 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
     boolean sh[] = {false,false,false,false};//shirt
     boolean w[] = {false,false};//wear
     boolean f[] = {false,false};//food
-//    int nowcolor=0;
+    int nowcolor=0;
     int producttotal[] ={0,0,0,0};//auto find how much mun of each kind product????
     int filternum=0;
     @Override
@@ -84,10 +84,10 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
         bmain = findViewById(R.id.B_main);
         bcart = findViewById(R.id.B_cart1);
         bsetting = findViewById(R.id.B_setting1);
-//        Button b[] = {bp1,bs1,bsh1,bw1,bf1,bmain,bcart,bsetting};
-//        for(int i=0;i<b.length;i++){
-//            changebtncolor(b[i],nowcolor);
-//        }
+        Button b[] = {bp1,bs1,bsh1,bw1,bf1,bmain,bcart,bsetting};
+        for(int i=0;i<b.length;i++){
+            changebtncolor(b[i],nowcolor);
+        }
 
 
 
@@ -123,6 +123,8 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
         }
 
 
+        if (login.userName.isEmpty())
+            finish();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference colorFB = database.getReference("account/" + login.userName + "/color");
@@ -430,6 +432,7 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
 
     public void MainOnClick(View v){
         Intent it = new Intent(this,shopping.class);
+        finish();
         startActivity(it);
     }
     public void CartOnClick(View v){
@@ -439,41 +442,38 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
         it.putExtra("shirt",sh);
         it.putExtra("wear",w);
         it.putExtra("food",f);
+        finish();
         startActivity(it);
     }
     public void SettingOnClick(View v){
         Intent it = new Intent(this,setting.class);
-        it.putExtra("phone",p);
-        it.putExtra("shoe",s);
-        it.putExtra("shirt",sh);
-        it.putExtra("wear",w);
-        it.putExtra("food",f);
+        finish();
         startActivity(it);
     }
 
 
-//    public void changebtncolor(Button b , int color){
-//        switch (color){
-//            case 0:
-//                b.setBackgroundColor(Color.rgb(98,0,238));
-//                b.setTextColor(Color.rgb(255,255,255));
-//                break;
-//            case 1:
-//                b.setBackgroundColor(Color.rgb(0,0,0));
-//                b.setTextColor(Color.rgb(255,255,255));
-//                break;
-//            case 2:
-//                b.setBackgroundColor(Color.rgb(0,255,0));
-//                b.setTextColor(Color.rgb(255,255,255));
-//                break;
-//            case 3:
-//                b.setBackgroundColor(Color.rgb(255,0,0));
-//                b.setTextColor(Color.rgb(255,255,255));
-//                break;
-//            default:
-//                break;
-//        }
-//    }
+    public void changebtncolor(Button b , int color){
+        switch (color){
+            case 0:
+                b.setBackgroundColor(Color.rgb(98,0,238));
+                b.setTextColor(Color.rgb(255,255,255));
+                break;
+            case 1:
+                b.setBackgroundColor(Color.rgb(0,0,0));
+                b.setTextColor(Color.rgb(255,255,255));
+                break;
+            case 2:
+                b.setBackgroundColor(Color.rgb(0,255,0));
+                b.setTextColor(Color.rgb(255,255,255));
+                break;
+            case 3:
+                b.setBackgroundColor(Color.rgb(255,0,0));
+                b.setTextColor(Color.rgb(255,255,255));
+                break;
+            default:
+                break;
+        }
+    }
 
 
 }
