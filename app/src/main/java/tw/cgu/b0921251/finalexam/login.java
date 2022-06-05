@@ -106,9 +106,15 @@ implements TextWatcher{
             pswd.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    String value = dataSnapshot.getValue(String.class);
-                    System.out.println(value);
-                    PSWD = value.toString();
+                    try {
+                        String value = dataSnapshot.getValue(String.class);
+                        System.out.println(value);
+                        if (!value.equals(null))
+                            PSWD = value.toString();
+                    }
+                    catch (Exception e1){
+                        e1.printStackTrace();
+                    }
                 }
 
                 @Override
