@@ -22,6 +22,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 class CheckOut extends AppCompatActivity implements
     CompoundButton.OnCheckedChangeListener, DialogInterface.OnClickListener {
 
@@ -156,16 +158,17 @@ class CheckOut extends AppCompatActivity implements
             }
         }
         String str6=String.valueOf(total);
-        if(str1!="") items.add(str1);
-        if(str2!="") items.add(str2);
-        if(str3!="") items.add(str3);
-        if(str4!="") items.add(str4);
-        if(str5!="") items.add(str5);
+        ArrayList<String> select=new ArrayList<>();
+        if(str1!="") select.add(str1);
+        if(str2!="") select.add(str2);
+        if(str3!="") select.add(str3);
+        if(str4!="") select.add(str4);
+        if(str5!="") select.add(str5);
 
-        items.add(str6);
+        select.add(str6);
 
 
-        items=new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,str);
+        items=new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,select);
         L_item.setAdapter(items);
 
 
