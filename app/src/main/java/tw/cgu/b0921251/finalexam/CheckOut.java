@@ -152,10 +152,6 @@ class CheckOut extends AppCompatActivity implements
                         total+=Integer.parseInt(infoofitem.getStringExtra("第五物品價格"))*
                                 Integer.parseInt(infoofitem.getStringExtra("第五物品數量"));
                         break;
-
-
-
-
                 }
             }
         }
