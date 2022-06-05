@@ -239,10 +239,10 @@ class CheckOut extends AppCompatActivity implements
     @Override
     public void onClick(DialogInterface dialogInterface, int i) {
         if(i==DialogInterface.BUTTON_POSITIVE){
-            /* Intent gom=new Intent();
-            gom.setClass(this,main的檔案);
+            Intent gom=new Intent();
+            gom.setClass(this,shopping.class);
             startActivity(gom);
-            */
+
         }
     }
 }
