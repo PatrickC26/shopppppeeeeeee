@@ -69,9 +69,9 @@ implements RadioGroup.OnCheckedChangeListener {
                         case 0:
                             RadioButton RBP = findViewById(R.id.RB_purple);
                             RBP.setChecked(true);
-                            toShop.setBackgroundColor(Color.rgb(128,0,128));
-                            toCart.setBackgroundColor(Color.rgb(128,0,128));
-                            toSetting.setBackgroundColor(Color.rgb(128,0,128));
+                            toShop.setBackgroundColor(Color.rgb(255,0,103));
+                            toCart.setBackgroundColor(Color.rgb(255,0,103));
+                            toSetting.setBackgroundColor(Color.rgb(255,0,103));
                             break;
                         case 1:
                             RadioButton RBB = findViewById(R.id.RB_black);
@@ -84,9 +84,9 @@ implements RadioGroup.OnCheckedChangeListener {
                         case 2:
                             RadioButton RBG = findViewById(R.id.RB_green);
                             RBG.setChecked(true);
-                            toShop.setBackgroundColor(Color.rgb(0,255,0));
-                            toCart.setBackgroundColor(Color.rgb(0,255,0));
-                            toSetting.setBackgroundColor(Color.rgb(0,255,0));
+                            toShop.setBackgroundColor(Color.rgb(105,161,2));
+                            toCart.setBackgroundColor(Color.rgb(105,161,2));
+                            toSetting.setBackgroundColor(Color.rgb(105,161,2));
                             break;
                         case 3:
                             RadioButton RBR = findViewById(R.id.RB_red);

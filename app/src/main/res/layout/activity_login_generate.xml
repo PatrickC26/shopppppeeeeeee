@@ -49,7 +49,6 @@
         android:layout_marginBottom="8dp"
         android:hint="Name"
         android:imeActionLabel="@string/action_sign_in_short"
-        android:imeOptions="actionDone"
         android:minHeight="48dp"
         android:padding="4dp"
         android:selectAllOnFocus="true"

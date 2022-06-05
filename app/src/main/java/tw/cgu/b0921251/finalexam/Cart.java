@@ -128,11 +128,11 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
 
                     switch (themeColor){
                         case 0:
-                            B_deleteAll.setBackgroundColor(Color.rgb(128,0,128));
-                            B_pay.setBackgroundColor(Color.rgb(128,0,128));
-                            B_main.setBackgroundColor(Color.rgb(128,0,128));
-                            B_cart.setBackgroundColor(Color.rgb(128,0,128));
-                            B_setting.setBackgroundColor(Color.rgb(128,0,128));
+                            B_deleteAll.setBackgroundColor(Color.rgb(255,0,103));
+                            B_pay.setBackgroundColor(Color.rgb(255,0,103));
+                            B_main.setBackgroundColor(Color.rgb(255,0,103));
+                            B_cart.setBackgroundColor(Color.rgb(255,0,103));
+                            B_setting.setBackgroundColor(Color.rgb(255,0,103));
                             break;
 
                         case 1:
@@ -144,11 +144,11 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
                             break;
 
                         case 2:
-                            B_deleteAll.setBackgroundColor(Color.rgb(0,255,0));
-                            B_pay.setBackgroundColor(Color.rgb(0,255,0));
-                            B_main.setBackgroundColor(Color.rgb(0,255,0));
-                            B_cart.setBackgroundColor(Color.rgb(0,255,0));
-                            B_setting.setBackgroundColor(Color.rgb(0,255,0));
+                            B_deleteAll.setBackgroundColor(Color.rgb(105,161,2));
+                            B_pay.setBackgroundColor(Color.rgb(105,161,2));
+                            B_main.setBackgroundColor(Color.rgb(105,161,2));
+                            B_cart.setBackgroundColor(Color.rgb(105,161,2));
+                            B_setting.setBackgroundColor(Color.rgb(105,161,2));
                             break;
                         case 3:
 
@@ -370,6 +370,7 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
             }
         }
         startActivity(gop);
+        finish();
     }
 
     public void cal(){

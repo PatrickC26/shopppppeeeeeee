@@ -140,14 +140,14 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
 
                     switch (themeColor){
                         case 0:
-                            bp1.setBackgroundColor(Color.rgb(128,0,128));
-                            bs1.setBackgroundColor(Color.rgb(128,0,128));
-                            bsh1.setBackgroundColor(Color.rgb(128,0,128));
-                            bw1.setBackgroundColor(Color.rgb(128,0,128));
-                            bf1.setBackgroundColor(Color.rgb(128,0,128));
-                            bmain.setBackgroundColor(Color.rgb(128,0,128));
-                            bcart.setBackgroundColor(Color.rgb(128,0,128));
-                            bsetting.setBackgroundColor(Color.rgb(128,0,128));
+                            bp1.setBackgroundColor(Color.rgb(255,0,103));
+                            bs1.setBackgroundColor(Color.rgb(255,0,103));
+                            bsh1.setBackgroundColor(Color.rgb(255,0,103));
+                            bw1.setBackgroundColor(Color.rgb(255,0,103));
+                            bf1.setBackgroundColor(Color.rgb(255,0,103));
+                            bmain.setBackgroundColor(Color.rgb(255,0,103));
+                            bcart.setBackgroundColor(Color.rgb(255,0,103));
+                            bsetting.setBackgroundColor(Color.rgb(255,0,103));
                             break;
 
                         case 1:
@@ -162,14 +162,14 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
                             break;
 
                         case 2:
-                            bp1.setBackgroundColor(Color.rgb(0,255,0));
-                            bs1.setBackgroundColor(Color.rgb(0,255,0));
-                            bsh1.setBackgroundColor(Color.rgb(0,255,0));
-                            bw1.setBackgroundColor(Color.rgb(0,255,0));
-                            bf1.setBackgroundColor(Color.rgb(0,255,0));
-                            bmain.setBackgroundColor(Color.rgb(0,255,0));
-                            bcart.setBackgroundColor(Color.rgb(0,255,0));
-                            bsetting.setBackgroundColor(Color.rgb(0,255,0));
+                            bp1.setBackgroundColor(Color.rgb(105,161,2));
+                            bs1.setBackgroundColor(Color.rgb(105,161,2));
+                            bsh1.setBackgroundColor(Color.rgb(105,161,2));
+                            bw1.setBackgroundColor(Color.rgb(105,161,2));
+                            bf1.setBackgroundColor(Color.rgb(105,161,2));
+                            bmain.setBackgroundColor(Color.rgb(105,161,2));
+                            bcart.setBackgroundColor(Color.rgb(105,161,2));
+                            bsetting.setBackgroundColor(Color.rgb(105,161,2));
                             break;
                         case 3:
                             bp1.setBackgroundColor(Color.rgb(255,0,0));
@@ -470,7 +470,7 @@ public class shopping extends AppCompatActivity implements AdapterView.OnItemSel
                 b.setTextColor(Color.rgb(255,255,255));
                 break;
             case 2:
-                b.setBackgroundColor(Color.rgb(0,255,0));
+                b.setBackgroundColor(Color.rgb(105,161,2));
                 b.setTextColor(Color.rgb(255,255,255));
                 break;
             case 3:

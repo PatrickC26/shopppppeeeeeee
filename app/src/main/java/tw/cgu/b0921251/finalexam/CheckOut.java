@@ -72,8 +72,8 @@ class CheckOut extends AppCompatActivity implements
 
                     switch (themeColor){
                         case 0:
-                            B_back.setBackgroundColor(Color.rgb(128,0,128));
-                            B_send.setBackgroundColor(Color.rgb(128,0,128));
+                            B_back.setBackgroundColor(Color.rgb(255,0,103));
+                            B_send.setBackgroundColor(Color.rgb(255,0,103));
                             break;
 
 
@@ -84,8 +84,8 @@ class CheckOut extends AppCompatActivity implements
                             break;
 
                         case 2:
-                            B_back.setBackgroundColor(Color.rgb(0,255,0));
-                            B_send.setBackgroundColor(Color.rgb(0,255,0));
+                            B_back.setBackgroundColor(Color.rgb(105,161,2));
+                            B_send.setBackgroundColor(Color.rgb(105,161,2));
 
                             break;
 

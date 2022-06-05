@@ -34,11 +34,11 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/P_user"
                     android:layout_width="138dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
-                    tools:srcCompat="@drawable/person" />
+                    app:srcCompat="@drawable/face" />
 
                 <TextView
                     android:id="@+id/L_user"
@@ -67,7 +67,7 @@
                     android:id="@+id/RB_purple"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="紫色"
+                    android:text="粉色"
                     android:textSize="18sp" />
 
                 <RadioButton
