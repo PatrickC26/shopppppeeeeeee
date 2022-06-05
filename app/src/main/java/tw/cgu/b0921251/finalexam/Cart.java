@@ -425,15 +425,10 @@ public class Cart extends AppCompatActivity implements View.OnLongClickListener,
                         gop.putExtra("第五物品價格",L_cartAmount5.getText().toString());
                         gop.putExtra("第五物品數量",T_cartQty5.getText().toString());
                         break;
-
                 }
             }
         }
-
-
         startActivity(gop);
-
-
     }
 
     public void cal(){

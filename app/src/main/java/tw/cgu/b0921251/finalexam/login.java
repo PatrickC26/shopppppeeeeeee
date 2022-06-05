@@ -73,6 +73,8 @@ implements TextWatcher{
             if (PSWD.equals(T_password.getText().toString())) {
                 userName = T_username.getText().toString();
                 startActivity(new Intent(this, shopping.class));
+                T_username.setText("");
+                T_password.setText("");
             } else {
                 AlertDialog.Builder loginUnsuccessfull = new AlertDialog.Builder(this);
                 loginUnsuccessfull.setMessage("登入失敗！").setTitle("錯誤").setPositiveButton("OK", null).show();

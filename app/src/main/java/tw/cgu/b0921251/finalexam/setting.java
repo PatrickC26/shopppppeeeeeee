@@ -126,7 +126,17 @@ implements RadioGroup.OnCheckedChangeListener {
 
 
 
-    public void MainOnClick(View v){ finish(); startActivity(new Intent(this, shopping.class));}
+    public void MainOnClick(View v){
+        Intent it = new Intent(this,Cart.class);
+        it.putExtra("flag",1);
+        it.putExtra("phone",p);
+        it.putExtra("shoe",s);
+        it.putExtra("shirt",sh);
+        it.putExtra("wear",w);
+        it.putExtra("food",f);
+        finish();
+        startActivity(it);
+    }
     public void CartOnClick(View v){
         Intent it = new Intent(this,Cart.class);
         it.putExtra("flag",1);
